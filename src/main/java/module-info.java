@@ -4,4 +4,7 @@ module com.mycompany.jogo {
 
     opens com.mycompany.jogo to javafx.fxml;
     exports com.mycompany.jogo;
+    
+    opens com.mycompany.jogo to javafx.fxml;
+    exports com.mycompany.controller;
 }

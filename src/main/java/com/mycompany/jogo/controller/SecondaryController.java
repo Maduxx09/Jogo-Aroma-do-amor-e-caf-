@@ -1,5 +1,6 @@
-package com.mycompany.jogo;
+package com.mycompany.jogo.controller;
 
+import com.mycompany.jogo.App;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
