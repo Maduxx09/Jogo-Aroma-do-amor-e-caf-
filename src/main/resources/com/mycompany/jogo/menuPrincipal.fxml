@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
 
@@ -7,7 +8,12 @@
       xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
       fx:controller="com.mycompany.jogo.controller.PrimaryController">
    <children>
-      <Label text="Aroma de Amor e Cafe" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ECF0F1;" />
+      <ImageView fx:id="imagemTitulo" fitWidth="400" preserveRatio="true" 
+           VBox.vgrow="ALWAYS">
+    <image>
+        <Image url="@titulo.png" />
+    </image>
+    </ImageView>
       
       <Button text="Jogar" onAction="#irParaGameplay" prefWidth="200" style="-fx-background-color: #E67E22; -fx-text-fill: white;" />
       
