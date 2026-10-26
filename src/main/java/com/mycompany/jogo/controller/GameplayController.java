@@ -35,6 +35,6 @@ public class GameplayController {
 
     @FXML
     private void voltar() throws IOException {
-        App.setRoot("view/MenuPrincipal");
+        App.setRoot("menuPrincipal");
     }
 }
