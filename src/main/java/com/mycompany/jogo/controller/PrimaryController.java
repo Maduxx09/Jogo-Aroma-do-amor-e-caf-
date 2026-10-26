@@ -1,4 +1,4 @@
-package com.mycompany.jogo.controller;
+   package com.mycompany.jogo.controller;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -7,20 +7,19 @@ import com.mycompany.jogo.App;
 import javafx.scene.image.ImageView;
 
 public class PrimaryController {
-    
-    @FXML private ImageView titulo;
-    
+
+    @FXML
+    private ImageView titulo;
+
     @FXML
     private void initialize() {
-    titulo.sceneProperty().addListener((obs, oldScene, newScene) -> {
-        if (newScene != null) {
-            titulo.fitWidthProperty().bind(
-                newScene.widthProperty().multiply(0.5)
-            );
-        }
-    });
-}
-            
+        titulo.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                titulo.fitWidthProperty().bind(newScene.widthProperty().multiply(0.4));
+            }
+        });
+    }
+
     @FXML
     private void irParaGameplay() throws IOException {
         App.setRoot("gameplay");
@@ -36,7 +35,7 @@ public class PrimaryController {
 
     @FXML
     private void irParaUpgrades() throws IOException {
-        App.setRoot("creditos");
+        App.setRoot("loja");
     }
 
     @FXML
