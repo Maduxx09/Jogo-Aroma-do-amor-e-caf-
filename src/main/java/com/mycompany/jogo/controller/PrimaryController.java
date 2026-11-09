@@ -1,9 +1,10 @@
-   package com.mycompany.jogo.controller;
+package com.mycompany.jogo.controller;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import com.mycompany.jogo.App;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class PrimaryController {
@@ -11,11 +12,20 @@ public class PrimaryController {
     @FXML
     private ImageView titulo;
 
+    private final Image normal = new Image(getClass().getResourceAsStream("/com/mycompany/jogo/titulo.png"));
+    private final Image hover = new Image(getClass().getResourceAsStream("/com/mycompany/jogo/titulo2.png"));
+
     @FXML
     private void initialize() {
-        titulo.sceneProperty().addListener((obs, oldScene, newScene) -> {
-            if (newScene != null) {
-                titulo.fitWidthProperty().bind(newScene.widthProperty().multiply(0.4));
+        titulo.setImage(normal);
+
+        titulo.setOnMouseEntered(e -> titulo.setImage(hover));
+        titulo.setOnMouseExited(e -> titulo.setImage(normal));
+
+        // tamanho responsivo (opcional)
+        titulo.sceneProperty().addListener((obs, old, scene) -> {
+            if (scene != null) {
+                titulo.fitWidthProperty().bind(scene.widthProperty().multiply(0.45));
             }
         });
     }
@@ -27,10 +37,10 @@ public class PrimaryController {
 
     @FXML
     private void irParaRanking() {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle("Ranking");
-        alerta.setContentText("Em desenvolvimento.");
-        alerta.showAndWait();
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("Ranking");
+        a.setContentText("Em desenvolvimento.");
+        a.showAndWait();
     }
 
     @FXML
